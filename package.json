@@ -1,0 +1,23 @@
+{
+  "name": "web-assembly-udemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathipg/web-assembly-udemy.git"
+  },
+  "author": "Nathália Pissuti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathipg/web-assembly-udemy/issues"
+  },
+  "homepage": "https://github.com/nathipg/web-assembly-udemy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
