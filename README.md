@@ -8,6 +8,7 @@ Emscripten: https://emscripten.org/index.html
 
 `
 emcc .\lib\demo.c -s WASM=1 -o .\public\demo.js
+
 emcc .\lib\demo.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_main', '_getNum']" -o .\public\demo.js
 `
 
