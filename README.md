@@ -15,3 +15,13 @@ Emscripten: https://emscripten.org/index.html
 `ccall('greet', 'string')`
 
 `ccall('greet', 'string', ['string'], ['Pissuti'])`
+
+### Preamble
+
+`UTF8ToString(_getStr())`
+
+`UTF16ToString(_getStr())`
+
+`UTF32ToString(_getStr())`
+
+`stringToUTF8('new value', _getStr(), lengthBytesUTF8('new value') + 1)`
