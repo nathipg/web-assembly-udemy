@@ -9,8 +9,16 @@
 <body>
   <h1>WebAssembly Demo</h1>
   <script>
+    // Imports object
+    const imports = {
+      env: {
+        numLog: console.log,
+        strLog: console.log,
+      }
+    };
+
     // Load WASM
-    WebAssembly.instantiateStreaming(fetch('/program.wasm'))
+    WebAssembly.instantiateStreaming(fetch('/program.wasm'), imports)
       .then(wasm => {
         console.log('WASM ready');
 
@@ -20,8 +28,11 @@
         // Log out all exported functions
         console.log(WebAssembly.Module.exports(wasm.module));
 
+        // Log out all imported functions
+        console.log(WebAssembly.Module.imports(wasm.module));
+
         // Execute function
-        console.log(wasm.instance.exports.getDoubleNumber(80));
+        wasm.instance.exports.getDoubleNumber(80);
       });
   </script>
 </body>
