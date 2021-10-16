@@ -10,6 +10,8 @@ Emscripten: https://emscripten.org/index.html
 
 `emcc .\lib\demo.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_main', '_getNum']" -o .\public\demo.js`
 
+`emcc lib/canvas.c -s WASM=1 -s EXPORTED_FUNCTIONS="['_main', '_getCircles']" -o public/canvas.js`
+
 ## Commands
 
 `ccall('greet', 'string')`

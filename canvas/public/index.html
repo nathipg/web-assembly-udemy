@@ -24,7 +24,10 @@
     // Render circles on canvas
     const render = (dataLength, circleStructSize) => {
       // Get circle data from C - Typed Array
-      const circles = new Int32Array(wasmMemory.buffer, _getCircles(), dataLength);
+      const circles = new Int32Array(wasmMemory.buffer, _getCircles(canvas.width, canvas.height), dataLength);
+
+      // Clear canvas to re-render
+      context.clearRect(0, 0, canvas.width, canvas.height);
       
       // Loop data and get circles chunks
       for(let i = 0; i < circles.length; i += circleStructSize) {
@@ -41,7 +44,9 @@
       console.log('rendered');
 
       // Request next animation frame and re-render with updated circles
-      //window.requestAnimationFrame(render);
+      window.requestAnimationFrame(() => {
+        render(dataLength, circleStructSize);
+      });
     }
   </script>
 </body>
